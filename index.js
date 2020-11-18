@@ -10,6 +10,7 @@ app.post("/callback", line.middleware(configFile), async (req, res) => {
     const bodyEvents = req.body.events[0];
     replyToken = bodyEvents.replyToken;
     text = bodyEvents.message.text
+    console.log("Body :"+bodyEvents)
     console.log("Text Received : "+text)
     console.log("User ID       : "+bodyEvents.source.userId)
     console.log("Chat Id       : "+bodyEvents.message.id)

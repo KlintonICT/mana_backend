@@ -1,8 +1,10 @@
 const express = require("express");
 const line = require("@line/bot-sdk");
 const bodyParser = require("body-parser");
+const request = require('request')
 const app = express();
 const configFile = require("./LineToken.json");
+const { request } = require("express");
 var replyToken;
 var text;
 
@@ -41,7 +43,7 @@ function reply(replytoken) {
           text: 'How are you?'
       }]
   })
-  request.post({
+  request({
       url: 'https://api.line.me/v2/bot/message/reply',
       headers: headers,
       body: body

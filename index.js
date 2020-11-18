@@ -4,7 +4,6 @@ const request = require("request"); //asd
 const bodyParser = require("body-parser");
 const app = express();
 const configFile = require("./LineToken.json");
-const { request } = require("express");
 var replyToken;
 var text;
 

@@ -18,14 +18,14 @@ app.post("/callback", line.middleware(configFile), async (req, res) => {
     res.json(bodyEvents); // req.body will be webhook event object
 
     if(text == "ส่งบิล"){
-      console.log("hi");
+      reply(replyToken);
     }
   });
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-if(text == "ส่งบิล"){
+function reply(replyToken){
   app.post("/reply", (req,res) => {
     const options =  {
       method: "POST",

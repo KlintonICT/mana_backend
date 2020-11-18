@@ -1,13 +1,12 @@
 const express = require("express");
 const line = require("@line/bot-sdk");
+const lineFunction = require("./line");
 const bodyParser = require("body-parser");
 const app = express();
 const configFile = require("./LineToken.json");
 
 app.post("/callback", line.middleware(configFile), async (req, res) => {
     const bodyEvents = req.body.events[0];
-    var userData = lineFunction.callback(bodyEvents);
-    console.log(userData.message)
     console.log(bodyEvents)
     res.json(bodyEvents); // req.body will be webhook event object
   });

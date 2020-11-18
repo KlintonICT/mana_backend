@@ -6,7 +6,7 @@ const configFile = require("./LineToken.json");
 
 app.post("/callback", line.middleware(configFile), async (req, res) => {
     const bodyEvents = req.body.events[0];
-    console.log(bodyEvents.message)
+    console.log(bodyEvents.message.text)
     res.json(bodyEvents); // req.body will be webhook event object
   });
   

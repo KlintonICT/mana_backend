@@ -3,20 +3,48 @@ const line = require("@line/bot-sdk");
 const bodyParser = require("body-parser");
 const app = express();
 const configFile = require("./LineToken.json");
+var replyToken
 
 app.post("/callback", line.middleware(configFile), async (req, res) => {
     const bodyEvents = req.body.events[0];
+    replyToken = bodyEvents.replyToken;
     console.log("Text Received : "+bodyEvents.message.text)
     console.log("User ID       : "+bodyEvents.source.userId)
     console.log("Chat Id       : "+bodyEvents.message.id)
+    console.log("Reply Token   : "+bodyEvents.replytoken)
     res.json(bodyEvents); // req.body will be webhook event object
   });
   
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
-
+if(bodyEvents.message.text == "ส่งบิล"){
+  app.post("/reply", (req,res) => {
+    const options =  {
+      method: "POST",
+      url: "https://api.line.me/v2/bot/message/reply",
+      headers: {
+        Authorization: "Bearer " + configFile.channelAccessToken,
+        "Content-Type": "application/json",
+      },
+      body: {
+        replyToken: replyToken,
+        messages: [{
+          "type":"text",
+          "text":"Hello, user"
+        }],
+      },
+      json: true,
+    };
+    request(options, function (error, response) {
+      if (error) throw new Error(error);
+      console.log("DATA : " + JSON.stringify(data));
+      res.send(
+        "Successfully send : " + JSON.stringify(data) + " To : " + replyToken
+      );
+    });
+  });
+}
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`listening on ${port}`);

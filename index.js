@@ -1,9 +1,10 @@
 const express = require("express");
+const line = require("@line/bot-sdk");
 const app = express();
 const port = 4000;
 const configFile = require("./LineToken.json");
 
-app.post("/callback", middleware(configFile), async (req, res) => {
+app.post("/callback", line.middleware(configFile), async (req, res) => {
     const bodyEvents = req.body.events[0];
     var userData = lineFunction.callback(bodyEvents);
     console.log(bodyEvents)

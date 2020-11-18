@@ -16,11 +16,15 @@ app.post("/callback", line.middleware(configFile), async (req, res) => {
     console.log("Chat Id       : "+bodyEvents.message.id)
     console.log("Reply Token   : "+bodyEvents.replyToken)
     res.json(bodyEvents); // req.body will be webhook event object
+
+    if(text == "ส่งบิล"){
+      console.log("hi");
+    }
   });
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-console.log("done");
-console.log(text);
+
+
 if(text == "ส่งบิล"){
   app.post("/reply", (req,res) => {
     const options =  {

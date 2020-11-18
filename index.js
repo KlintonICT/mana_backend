@@ -3,8 +3,8 @@ const line = require("@line/bot-sdk");
 const bodyParser = require("body-parser");
 const app = express();
 const configFile = require("./LineToken.json");
-var replyToken
-var text
+var replyToken;
+var text;
 
 app.post("/callback", line.middleware(configFile), async (req, res) => {
     const bodyEvents = req.body.events[0];

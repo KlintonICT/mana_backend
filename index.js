@@ -4,21 +4,23 @@ const bodyParser = require("body-parser");
 const app = express();
 const configFile = require("./LineToken.json");
 var replyToken
+var text
 
 app.post("/callback", line.middleware(configFile), async (req, res) => {
     const bodyEvents = req.body.events[0];
     replyToken = bodyEvents.replyToken;
-    console.log("Text Received : "+bodyEvents.message.text)
+    text = bodyEvents.message.text
+    console.log("Text Received : "+text)
     console.log("User ID       : "+bodyEvents.source.userId)
     console.log("Chat Id       : "+bodyEvents.message.id)
-    console.log("Reply Token   : "+bodyEvents.replytoken)
+    console.log("Reply Token   : "+replytoken)
     res.json(bodyEvents); // req.body will be webhook event object
   });
   
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-if(bodyEvents.message.text == "ส่งบิล"){
+if(text == "ส่งบิล"){
   app.post("/reply", (req,res) => {
     const options =  {
       method: "POST",
@@ -38,9 +40,9 @@ if(bodyEvents.message.text == "ส่งบิล"){
     };
     request(options, function (error, response) {
       if (error) throw new Error(error);
-      console.log("DATA : " + JSON.stringify(data));
+      // console.log("DATA : " + JSON.stringify(data));
       res.send(
-        "Successfully send : " + JSON.stringify(data) + " To : " + replyToken
+        "Successfully send : " + options + " To : " + replyToken
       );
     });
   });

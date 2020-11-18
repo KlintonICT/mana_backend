@@ -42,7 +42,7 @@ function reply(replytoken) {
           text: 'How are you?'
       }]
   })
-  request({
+  request.post({
       url: 'https://api.line.me/v2/bot/message/reply',
       headers: headers,
       body: body

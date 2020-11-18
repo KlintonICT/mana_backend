@@ -14,7 +14,7 @@ app.post("/callback", line.middleware(configFile), async (req, res) => {
     console.log("Text Received : "+text)
     console.log("User ID       : "+bodyEvents.source.userId)
     console.log("Chat Id       : "+bodyEvents.message.id)
-    console.log("Reply Token   : "+replytoken)
+    console.log("Reply Token   : "+bodyEvents.replyToken)
     res.json(bodyEvents); // req.body will be webhook event object
   });
   

@@ -34,20 +34,24 @@ function reply(replytoken) {
   let body = JSON.stringify({
       replyToken: replytoken,
       messages: [{
-        "type": "bubble", // ①
-        "body": { // ②
-          "type": "box", // ③
-          "layout": "horizontal", // ④
-          "contents": [ // ⑤
-            {
-              "type": "text", // ⑥
-              "text": "Hello,"
-            },
-            {
-              "type": "text", // ⑥
-              "text": "World!"
-            }
-          ]
+        "type": "flex",
+        "altText": "This is a Flex Message",
+        "contents": {
+          "type": "bubble",
+          "body": {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Hello,"
+              },
+              {
+                "type": "text",
+                "text": "World!"
+              }
+            ]
+          }
         }
       }
       ]

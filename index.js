@@ -9,7 +9,7 @@ var text;
 app.post("/callback", line.middleware(configFile), async (req, res) => {
     const bodyEvents = req.body.events[0];
     replyToken = bodyEvents.replyToken;
-    text = bodyEvents.message.text
+    text = bodyEvents.message.text;
     console.log("Body :"+bodyEvents)
     console.log("Text Received : "+text)
     console.log("User ID       : "+bodyEvents.source.userId)
@@ -17,10 +17,10 @@ app.post("/callback", line.middleware(configFile), async (req, res) => {
     console.log("Reply Token   : "+bodyEvents.replyToken)
     res.json(bodyEvents); // req.body will be webhook event object
   });
-  
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+console.log(text);
 if(text == "ส่งบิล"){
   app.post("/reply", (req,res) => {
     const options =  {

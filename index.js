@@ -19,7 +19,7 @@ app.post("/callback", line.middleware(configFile), async (req, res) => {
   });
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+console.log("done");
 console.log(text);
 if(text == "ส่งบิล"){
   app.post("/reply", (req,res) => {

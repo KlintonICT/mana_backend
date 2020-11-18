@@ -1,5 +1,6 @@
 const express = require("express");
 const line = require("@line/bot-sdk");
+const request = require("request"); //asd
 const bodyParser = require("body-parser");
 const app = express();
 const configFile = require("./LineToken.json");

@@ -19,3 +19,8 @@ app.use(bodyParser.json());
 // console.log("helo");
 // app.get('/', (req, res) => res.json({message: "Hello World"}))
 // app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`listening on ${port}`);
+});

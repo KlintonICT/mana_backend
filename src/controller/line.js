@@ -42,7 +42,7 @@ const reply = (replyToken) => {
   request.post({
     url: `${process.env.LINE_HOST}/bot/message/reply`,
     headers: headers,
-    body: data
+    body: JSON.stringify(data)
   }).then((response) => {
     console.log("Bot reply: ", response);
   }).catch((error) => {

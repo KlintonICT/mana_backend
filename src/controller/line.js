@@ -31,7 +31,7 @@ const reply = (replyToken) => {
   };
 
   axios
-    .post(`${process.env.LINE_HOST}/bot/message/reply`, data, { headers })
+    .post(`${process.env.LINE_HOST}/bot/message/reply`, data, { headers: headers })
     .then((response) => {
       console.log("Bot reply: ", response);
     })

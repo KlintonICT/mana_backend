@@ -35,7 +35,8 @@ const reply = (replyToken) => {
       headers: headers,
     })
     .then((response) => {
-      console.log("Bot reply: ", response);
+      console.log("Bot reply data: ", response.data);
+      console.log("Bot reply code: ", response.statusCode);
     })
     .catch((error) => {
       console.log("Bot reply error: ", error);

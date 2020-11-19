@@ -30,32 +30,14 @@ const reply = (replyToken) => {
     message: responseMessage,
   };
 
-  // request
-  //   .post(`${process.env.LINE_HOST}/bot/message/reply`, data, { headers })
-  //   .then((response) => {
-  //     console.log("Bot reply: ", response);
-  //   })
-  //   .catch((error) => {
-  //     console.log("Bot reply error: ", error);
-  //   });
-
-  request.post({
-    url: `${process.env.LINE_HOST}/bot/message/reply`,
-    headers: headers,
-    body: JSON.stringify(data)
-  }).then((response) => {
-    console.log("Bot reply: ", response);
-  }).catch((error) => {
-    console.log("Bot reply error: ", error);
-  })
-
-  //   request.post({
-  //     url: 'https://api.line.me/v2/bot/message/reply',
-  //     headers: headers,
-  //     body: body
-  // }, (err, res, body) => {
-  //     console.log('status = ' + res.statusCode);
-  // });
+  axios
+    .post(`${process.env.LINE_HOST}/bot/message/reply`, data, { headers })
+    .then((response) => {
+      console.log("Bot reply: ", response);
+    })
+    .catch((error) => {
+      console.log("Bot reply error: ", error);
+    });
 };
 
 export default { lineCallback };

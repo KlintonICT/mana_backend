@@ -14,7 +14,11 @@
     "@line/bot-sdk": "^7.1.0",
     "axios": "^0.21.0",
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "moment": "^2.29.1",
+    "tedious": "^9.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",

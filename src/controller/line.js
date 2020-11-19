@@ -27,7 +27,7 @@ const reply = (replyToken) => {
 
   const data = {
     replyToken: replyToken,
-    message: responseMessage,
+    messages: responseMessage,
   };
 
   axios

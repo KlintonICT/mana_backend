@@ -6,11 +6,11 @@ export const responseMessage = [
       type: "bubble",
       body: {
         type: "box",
-        layout: "horizontal",
+        layout: "vertical",
         contents: [
           {
-            type: "text",
-            text: "Hello,",
+            type: "image",
+            text: "https://cdn.mos.cms.futurecdn.net/TdaG9Gex57AHnRZG79wYKT.jpg",
           },
           {
             type: "text",

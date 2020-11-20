@@ -6,10 +6,10 @@ export const responseMessage = [
       type: "bubble",
       body: {
         type: "box",
-        layout: "horizontal",
+        layout: "vertical",
         contents: [
           {
-            type: "text",
+            type: "image",
             text: "Hello,",
           },
           {

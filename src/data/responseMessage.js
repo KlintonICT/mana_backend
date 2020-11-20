@@ -15,13 +15,19 @@ export const responseMessage = [
         contents: [
           {
             type: "text",
-            text: "#ส่งบิล"
+            text: "#ส่งบิล",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "xxl"
+          },
+          {
+            "type": "filler"
+          },
+          {
+            "type": "icon",
+            "url": "https://example.com/flex/images/icon.png",
+            "size": "md"
           }
-          // {
-          //   "type": "icon",
-          //   "url": "https://example.com/flex/images/icon.png",
-          //   "size": "md"
-          // }
         ]
       },
       body: {

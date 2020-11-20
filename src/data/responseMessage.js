@@ -21,12 +21,12 @@ export const responseMessage = [
             size: "xxl"
           },
           {
-            "type": "filler"
+            type: "filler"
           },
           {
-            "type": "icon",
-            "url": "https://example.com/flex/images/icon.png",
-            "size": "md"
+            type: "icon",
+            url: "https://example.com/flex/images/icon.png",
+            size: "md"
           }
         ]
       },

@@ -16,7 +16,7 @@ export const responseMessage = [
           {
             type: "text",
             text: "#ส่งบิล",
-            color: "#FFFFFF",
+            color: "#ffffff",
             weight: "bold",
             size: "xxl"
           },

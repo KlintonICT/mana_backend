@@ -16,7 +16,7 @@ export const responseMessage = [
           {
             type: "text",
             text: "#ส่งบิล",
-            color: "#ffffff",
+            // color: "#ffffff",
             weight: "bold",
             size: "xxl"
           },
@@ -26,7 +26,7 @@ export const responseMessage = [
           {
             type: "icon",
             url: "https://example.com/flex/images/icon.png",
-            size: "md"
+            // size: "md"
           }
         ]
       },

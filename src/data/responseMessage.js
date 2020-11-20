@@ -4,13 +4,28 @@ export const responseMessage = [
     altText: "This is a Flex Message",
     contents: {
       type: "bubble",
-      hero: {
-        type: "image",
-        url: "https://example.com/flex/images/image.jpg",
-        size: "full",
-        aspectRatio: "2:1"
+      header: {
+        type: "box",
+        layout: "vertical",
+        contents: [
+          {
+            type: "text",
+            text: "#ส่งบิล"
+          }
+        ]
       },
       body: {
+        type: "box",
+        layout: "horizontal",
+        contents: [
+          {
+            type: "text",
+            text: "กรอกรายละเอียดรายงานประจำวันผ่านการกดปุ่มด้านล่างได้เลย",
+            wrap: true
+          }
+        ]
+      },
+      footer: {
         type: "box",
         layout: "vertical",
         contents: [
@@ -19,8 +34,8 @@ export const responseMessage = [
             style: "primary",
             action: {
               type: "uri",
-              label: "Go",
-              uri: "https://example.com"
+              label: "กดที่นี่เพื่อส่งบิล",
+              uri: "https://mana-outlet.stackblitz.io"
             }
           },
         ],

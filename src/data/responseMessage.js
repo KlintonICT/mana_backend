@@ -7,7 +7,7 @@ export const responseMessage = [
       styles: {
         header: {
           backgroundColor: "#D35132"
-        },
+        }
       },
       header: {
         type: "box",
@@ -17,11 +17,11 @@ export const responseMessage = [
             type: "text",
             text: "#ส่งบิล"
           },
-          {
-            "type": "icon",
-            "url": "https://example.com/flex/images/icon.png",
-            "size": "md"
-          }
+          // {
+          //   "type": "icon",
+          //   "url": "https://example.com/flex/images/icon.png",
+          //   "size": "md"
+          // }
         ]
       },
       body: {

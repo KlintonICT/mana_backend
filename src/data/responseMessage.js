@@ -13,12 +13,12 @@ export const responseMessage = [
             text: "#ส่งบิล",
             color: "#ffffff",
             weight: "bold",
-            size: "xxl"
+            size: "xxl",
           },
           {
-            type: "filler"
-          }
-        ]
+            type: "filler",
+          },
+        ],
       },
       body: {
         type: "box",
@@ -28,9 +28,9 @@ export const responseMessage = [
             type: "text",
             text: "กรอกรายละเอียดรายงานประจำวันผ่านการกดปุ่มด้านล่างได้เลย",
             wrap: true,
-            weight: "regular"
-          }
-        ]
+            weight: "regular",
+          },
+        ],
       },
       footer: {
         type: "box",
@@ -41,18 +41,18 @@ export const responseMessage = [
             action: {
               type: "uri",
               label: "กดที่นี่เพื่อส่งบิล",
-              uri: "https://mana-outlet.stackblitz.io"
+              uri: "https://mana-outlet.stackblitz.io",
             },
             color: "#D35132",
-            style: "primary"
-          }
-        ]
+            style: "primary",
+          },
+        ],
       },
-      "styles": {
-        "header": {
-          "backgroundColor": "#D35132"
-        }
-      }
+      styles: {
+        header: {
+          backgroundColor: "#D35132",
+        },
+      },
     },
   },
 ];

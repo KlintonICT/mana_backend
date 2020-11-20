@@ -1,5 +1,5 @@
 import { Request } from "tedious";
-import { getBillQuery } from "../../query";
+import { getBillQuery } from "../../sqlQuery";
 import { queryDatabase } from "../../database";
 
 const get = async (req, res) => {
@@ -9,7 +9,7 @@ const get = async (req, res) => {
       else
         rowCount <= 0
           ? res.status(200).json({ message: "No records found" })
-          : "";
+          : console.log("Records found");
     });
 
     let data = [];

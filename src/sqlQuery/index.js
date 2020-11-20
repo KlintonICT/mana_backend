@@ -15,3 +15,14 @@ export const sendBillQuery = (data) => {
 export const getBillQuery = () => {
   return "SELECT * FROM transacSumHistory";
 };
+
+// update bill query
+export const updateBillQuery = (data) => {
+  const { transacSumId, transferSum, cashSum, posSum } = data;
+
+  const updateValue = `UPDATE transacSumHistory
+    SET transferSum=${transferSum}, cashSum=${cashSum}, posSum=${posSum}
+    WHERE transacSumId= CAST('${transacSumId}' AS UNIQUEIDENTIFIER)`;
+
+  return updateValue;
+};

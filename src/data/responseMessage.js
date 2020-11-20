@@ -41,7 +41,7 @@ export const responseMessage = [
         contents: [
           {
             type: "button",
-            style: "#D35132",
+            //style: "#D35132",
             action: {
               type: "uri",
               label: "กดที่นี่เพื่อส่งบิล",

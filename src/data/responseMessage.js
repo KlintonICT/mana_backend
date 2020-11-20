@@ -4,11 +4,11 @@ export const responseMessage = [
     altText: "This is a Flex Message",
     contents: {
       type: "bubble",
-      styles: {
-        header: {
-          backgroundColor: "#D35132"
-        }
-      },
+      // styles: {
+      //   header: {
+      //     backgroundColor: "#D35132"
+      //   }
+      // },
       header: {
         type: "box",
         layout: "vertical",
@@ -16,7 +16,7 @@ export const responseMessage = [
           {
             type: "text",
             text: "#ส่งบิล"
-          },
+          }
           // {
           //   "type": "icon",
           //   "url": "https://example.com/flex/images/icon.png",

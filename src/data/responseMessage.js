@@ -4,17 +4,24 @@ export const responseMessage = [
     altText: "This is a Flex Message",
     contents: {
       type: "bubble",
+      hero: {
+        type: "image",
+        url: "https://example.com/flex/images/image.jpg",
+        size: "full",
+        aspectRatio: "2:1"
+      },
       body: {
         type: "box",
         layout: "vertical",
         contents: [
           {
-            type: "image",
-            text: "https://cdn.mos.cms.futurecdn.net/TdaG9Gex57AHnRZG79wYKT.jpg",
-          },
-          {
-            type: "text",
-            text: "World!",
+            type: "button",
+            style: "primary",
+            action: {
+              type: "uri",
+              label: "Go",
+              uri: "https://example.com"
+            }
           },
         ],
       },

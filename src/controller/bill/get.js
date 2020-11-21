@@ -1,16 +1,21 @@
 import { Request } from "tedious";
-import { getBillQuery } from "../../sqlQuery";
+import { getBillQuery, getByBranchQuery } from "../../sqlQuery";
 import { queryDatabase } from "../../database";
 
 const get = async (req, res) => {
   try {
-    const request = new Request(getBillQuery(), (error, rowCount) => {
-      if (error) res.status(500).json({ message: error });
-      else
-        rowCount <= 0
-          ? res.status(200).json({ message: "No records found" })
-          : console.log("Records found");
-    });
+    const { branch } = req.query;
+
+    const request = new Request(
+      branch ? getByBranchQuery(branch) : getBillQuery(),
+      (error, rowCount) => {
+        if (error) res.status(500).json({ message: error });
+        else
+          rowCount <= 0
+            ? res.status(200).json({ message: "No records found" })
+            : console.log("Records found");
+      }
+    );
 
     let data = [];
 

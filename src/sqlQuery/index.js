@@ -16,6 +16,11 @@ export const getBillQuery = () => {
   return "SELECT * FROM transacSumHistory";
 };
 
+// get bill by branch query
+export const getByBranchQuery = (branch) => {
+  return `SELECT * FROM transacSumHistory WHERE branch = '${branch}'`;
+};
+
 // update bill query
 export const updateBillQuery = (data) => {
   const { transacSumId, transferSum, cashSum, posSum } = data;

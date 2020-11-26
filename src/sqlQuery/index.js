@@ -5,8 +5,8 @@ export const sendBillQuery = (data) => {
   const today = thaiDate.format("YYYY-MM-DD HH:mm:ss.SSS");
   const { transferSum, cashSum, posSum, receiptImg } = data;
 
-  const insertValue = `INSERT INTO transacSumHistory (transacSumId, transferSum, cashSum, posSum, receiptImg, branch, datetime)
-    VALUES (NEWID(), ${transferSum}, ${cashSum}, ${posSum}, '${receiptImg}', 'rak yong', '${today}')`;
+  const insertValue = `INSERT INTO transacSumHistory (transacSumId, transferSum, cashSum, posSum, receiptImg, datetime)
+    VALUES (NEWID(), ${transferSum}, ${cashSum}, ${posSum}, '${receiptImg}', '${today}')`;
 
   return insertValue;
 };

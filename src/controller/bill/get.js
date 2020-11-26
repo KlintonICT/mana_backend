@@ -61,6 +61,15 @@ const filterResult = (columns) => {
       case "branch":
         filteredData.branch = value;
         break;
+      case "firstName":
+        filteredData.firstName = value;
+        break;
+      case "lastName":
+        filteredData.lastName = value;
+        break;
+      case "datetime":
+        filteredData.datetime = value;
+        break;
       default:
         filteredData.datetime = value;
     }

@@ -67,9 +67,6 @@ const filterResult = (columns) => {
       case "lastName":
         filteredData.lastName = value;
         break;
-      case "datetime":
-        filteredData.datetime = value;
-        break;
       default:
         filteredData.datetime = value;
     }

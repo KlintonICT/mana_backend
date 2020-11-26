@@ -6,7 +6,7 @@ export const sendBillQuery = (data) => {
   const { transferSum, cashSum, posSum, receiptImg } = data;
 
   const insertValue = `INSERT INTO transacSumHistory (transacSumId, transferSum, cashSum, posSum, receiptImg, branch, datetime)
-    VALUES (NEWID(), ${transferSum}, ${cashSum}, ${posSum}, ${receiptImg}, 'rak yong', ${today})`;
+    VALUES (NEWID(), ${transferSum}, ${cashSum}, ${posSum}, '${receiptImg}', 'rak yong', ${today})`;
 
   return insertValue;
 };

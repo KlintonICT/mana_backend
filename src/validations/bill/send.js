@@ -10,6 +10,7 @@ const send = (billObj) => {
     transferSum: Joi.number().min(0).max(100000).required(),
     cashSum: Joi.number().min(0).max(100000).required(),
     posSum: Joi.number().min(0).max(100000).required(),
+    receiptImg: Joi.string().required(),
   });
 
   const { error } = schema.validate(billObj);

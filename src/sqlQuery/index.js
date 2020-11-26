@@ -3,10 +3,10 @@ import moment from "moment";
 // send bill query
 export const sendBillQuery = (data) => {
   const today = moment(new Date()).format("YYYY-MM-DD");
-  const { transferSum, cashSum, posSum } = data;
+  const { transferSum, cashSum, posSum, receiptImg } = data;
 
   const insertValue = `INSERT INTO transacSumHistory (transacSumId, transferSum, cashSum, posSum, receiptImg, branch, datetime)
-    VALUES (NEWID(), ${transferSum}, ${cashSum}, ${posSum}, 'image-link', 'rak yong', ${today})`;
+    VALUES (NEWID(), ${transferSum}, ${cashSum}, ${posSum}, ${receiptImg}, 'rak yong', ${today})`;
 
   return insertValue;
 };

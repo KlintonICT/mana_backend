@@ -1,58 +1,23 @@
 export const responseMessage = [
   {
-    type: "flex",
-    altText: "This is a Flex Message",
-    contents: {
-      type: "bubble",
-      header: {
-        type: "box",
-        layout: "baseline",
-        contents: [
+      imageAspectRatio: "rectangle",
+      imageSize: "contain",
+      type: "template",
+      template: {
+        actions: [
           {
-            type: "text",
-            text: "#ส่งบิล",
-            color: "#ffffff",
-            weight: "bold",
-            size: "xxl",
-          },
-          {
-            type: "filler",
-          },
+            color: "#905C44",
+            type: "uri",
+            uri: "https://liff.line.me/1655240292-pqEGWAmZ",
+            buttonStyle: "PRIMARY",
+            label: "กดที่นี่เพื่อส่งบิล"
+          }
         ],
+        thumbnailImageUrl: "https://github.com/aommiikzy/MANA-Outlet/blob/master/title3.jpg?raw=true",
+        type: "buttons",
+        title: "ส่งบิล",
+        text: "กรอกรายละเอียดรายงานการประจำวันผ่านการกดปุ่มด้านล่างได้เลย"
       },
-      body: {
-        type: "box",
-        layout: "vertical",
-        contents: [
-          {
-            type: "text",
-            text: "กรอกรายละเอียดรายงานประจำวันผ่านการกดปุ่มด้านล่างได้เลย",
-            wrap: true,
-            weight: "regular",
-          },
-        ],
-      },
-      footer: {
-        type: "box",
-        layout: "vertical",
-        contents: [
-          {
-            type: "button",
-            action: {
-              type: "uri",
-              label: "กดที่นี่เพื่อส่งบิล",
-              uri: "https://mana-outlet.stackblitz.io",
-            },
-            color: "#D35132",
-            style: "primary",
-          },
-        ],
-      },
-      styles: {
-        header: {
-          backgroundColor: "#D35132",
-        },
-      },
-    },
-  },
+      altText: "ส่งบิล"
+    }
 ];

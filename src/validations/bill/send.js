@@ -7,6 +7,7 @@ import Joi from "joi";
 
 const send = (billObj) => {
   const schema = Joi.object({
+    userId: Joi.string().required(),
     transferSum: Joi.number().min(0).max(100000).required(),
     cashSum: Joi.number().min(0).max(100000).required(),
     posSum: Joi.number().min(0).max(100000).required(),

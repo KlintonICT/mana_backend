@@ -1,5 +1,5 @@
 import { Request } from "tedious";
-import { sendBillQuery } from "../../sqlQuery";
+import { sendBillQuery, verifySendBillUser } from "../../sqlQuery";
 import { queryDatabase } from "../../database";
 import billValidations from "../../validations/bill";
 
@@ -12,16 +12,31 @@ const send = async (req, res) => {
     if (typeof validated === "object")
       return res.status(500).json({ message: validated });
 
-    // save bill
-    const request = new Request(sendBillQuery(body), (error, rowCount) => {
-      if (error)
-        return res
-          .status(404)
-          .json({ message: "Store Bill failed.", error: error });
-      else res.status(200).json({ message: "Bill is stored" });
-    });
+    const verifyUser = new Request(
+      verifySendBillUser(body),
+      (error, rowCount) => {
+        if (error) res.status(500).json({ message: error });
+        else {
+          if (rowCount === 1) {
+            const request = new Request(sendBillQuery(body), (err, row) => {
+              if (err)
+                return res
+                  .status(404)
+                  .json({ message: "Store Bill failed.", error: error });
+              else res.status(200).json({ message: "Bill is stored" });
+            });
 
-    queryDatabase(request);
+            queryDatabase(request);
+          } else {
+            res
+              .status(404)
+              .json({ message: "User is not in the organization" });
+          }
+        }
+      }
+    );
+
+    queryDatabase(verifyUser);
   } catch (error) {
     console.log("Error", error);
     return res.status(500).json({ message: "Oops! Something went wrong!" });

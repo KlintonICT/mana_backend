@@ -10,6 +10,6 @@ router.put("/update", Bill.update);
 
 const inMemoryStorage = multer.memoryStorage();
 const uploadStrategy = multer({ storage: inMemoryStorage }).single('image');
-router.put("/upload-receipt", uploadStrategy, Bill.uploadReceipt);
+router.post("/upload-receipt", uploadStrategy, Bill.uploadReceipt);
 
 export default router;

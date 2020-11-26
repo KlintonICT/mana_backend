@@ -1,9 +1,8 @@
-import moment from "moment";
-
+const moment = require('moment-timezone');
 // send bill query
 export const sendBillQuery = (data) => {
-  const today = moment(new Date()).format("YYYY-MM-DD HH:mm:ss.SSS");
-  console.log(today)
+  const thaiDate = moment.tz(new Date(),'Asia/Bangkok');
+  const today = thaiDate.format("YYYY-MM-DD HH:mm:ss.SSS");
   const { transferSum, cashSum, posSum, receiptImg } = data;
 
   const insertValue = `INSERT INTO transacSumHistory (transacSumId, transferSum, cashSum, posSum, receiptImg, branch, datetime)

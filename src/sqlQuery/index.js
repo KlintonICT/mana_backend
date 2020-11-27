@@ -35,7 +35,19 @@ export const updateBillQuery = (data) => {
 };
 
 // verify use send bill
-export const verifySendBillUser = (data) => {
+export const userExists = (data) => {
   const { userId } = data;
   return `SELECT userId FROM userDb WHERE userId = '${userId}'`;
+};
+
+// create admin
+export const createAdminQuery = (data, hashedPassword) => {
+  const { username, branch, firstName, lastName } = data;
+  return `INSERT INTO userDb VALUES('${hashedPassword}', '${branch}', 'Admin', '${firstName}', '${lastName}', '${username}')`;
+};
+
+// admin login
+export const adminLoginQuery = (data) => {
+  const { username } = data;
+  return `SELECT password FROM userDb WHERE userId = '${username}'`;
 };

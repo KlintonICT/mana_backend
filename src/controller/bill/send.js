@@ -1,5 +1,5 @@
 import { Request } from "tedious";
-import { sendBillQuery, verifySendBillUser } from "../../sqlQuery";
+import { sendBillQuery, userExists } from "../../sqlQuery";
 import { queryDatabase } from "../../database";
 import billValidations from "../../validations/bill";
 
@@ -13,7 +13,7 @@ const send = async (req, res) => {
       return res.status(500).json({ message: validated });
 
     const verifyUser = new Request(
-      verifySendBillUser(body),
+      userExists(body),
       (error, rowCount) => {
         if (error) res.status(500).json({ message: error });
         else {
@@ -22,7 +22,7 @@ const send = async (req, res) => {
               if (err)
                 return res
                   .status(404)
-                  .json({ message: "Store Bill failed.", error: error });
+                  .json({ message: "Store Bill failed.", error: err });
               else res.status(200).json({ message: "Bill is stored" });
             });
 

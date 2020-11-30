@@ -12,7 +12,7 @@ export const greetingMessage = [
           "type": "image",
           "url": "https://manastrgacc.blob.core.windows.net/receipt-image/2811552165845925-photo_2020-11-30%2017.00.03.jpeg",
           "size": "full",
-          "aspectRatio": "20:13",
+          "aspectRatio": "1:1",
           "aspectMode": "cover"
         }
       }

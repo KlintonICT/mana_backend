@@ -1,6 +1,6 @@
 import axios from "axios";
 import { responseMessage } from "../data/responseMessage";
-import { greetingMessage } from "../data/greetingMessage";
+//import { greetingMessage } from "../data/greetingMessage";
 
 const lineCallback = async (req, res) => {
   const bodyEvents = req.body.events[0];

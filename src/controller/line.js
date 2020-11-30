@@ -50,7 +50,7 @@ const reply = (replyToken,responseMessage) => {
       console.log("Bot reply code: ", response.statusCode);
     })
     .catch((error) => {
-      console.log("Bot reply error: ", error);
+      console.log("Bot reply error: ", error.data.details);
     });
 };
 

@@ -4,12 +4,12 @@ import { responseMessage } from "../data/responseMessage";
 const lineCallback = async (req, res) => {
   const bodyEvents = req.body.events[0];
 
-  if(bodyEvents.message.text != null){
-    const text = bodyEvents.message.text
-    console.log("Text Received : ", text);;
-  }
+  // if(bodyEvents.message.text != null){
+  //   const text = bodyEvents.message.text
+  //   console.log("Text Received : ", text);;
+  // }
   
-  const replyToken = bodyEvents.replyToken;
+  // const replyToken = bodyEvents.replyToken;
 
   console.log("All :"+req);
   console.log("Body          : ", bodyEvents);

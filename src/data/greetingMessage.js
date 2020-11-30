@@ -4,13 +4,24 @@ export const greetingMessage = [
         "text":"Hello, user"
    },
    {
-    "type": "bubble",
-    "hero": {
-      "type": "image",
-      "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
-      "size": "full",
-      "aspectRatio": "20:13",
-      "aspectMode": "cover"
+    "type": "flex",
+    "altText": "This is a Flex Message",
+    "contents": {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Hello,"
+          },
+          {
+            "type": "text",
+            "text": "World!"
+          }
+        ]
+      }
     }
   }
   ];

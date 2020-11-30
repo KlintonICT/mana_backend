@@ -10,7 +10,7 @@ export const greetingMessage = [
         "type": "bubble",
         "hero": {
           "type": "image",
-          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+          "url": "https://manastrgacc.blob.core.windows.net/receipt-image/2811552165845925-photo_2020-11-30%2017.00.03.jpeg",
           "size": "full",
           "aspectRatio": "20:13",
           "aspectMode": "cover"

@@ -5,24 +5,27 @@ import { responseMessage } from "../data/responseMessage";
 const lineCallback = async (req, res) => {
   const bodyEvents = req.body.events[0];
   console.log("Body          : ", bodyEvents);
-  if(bodyEvents.message != null){
-  const text = bodyEvents.message.text
-  console.log("Text Received : ", text);
-  console.log("Chat ID       : ", bodyEvents.message.id);
-  console.log("Chat ID       : ", bodyEvents.message.id);
-    if (text === "ส่งบิล") reply(replyToken);
-  }
-  if(bodyEvents.type != null){
-    if(bodyEvents.type == "join"){
-     console.log("Yay joinin");
-     const replyToken = bodyEvents.replyToken;
-     greetings(replyToken,responseMessage);
-    }
-  }
 
   if(bodyEvents.source.userId != null){
     console.log("User ID       : ", bodyEvents.source.userId);
+  }  
+  if(bodyEvents.message != null){
+    const replyToken = bodyEvents.replyToken;
+    const text = bodyEvents.message.text
+    console.log("Text Received : ", text);
+    console.log("Chat ID       : ", bodyEvents.message.id);
+    if (text === "ส่งบิล") reply(replyToken);
   }
+
+  if(bodyEvents.type != null){
+    if(bodyEvents.type == "join"){
+      const replyToken = bodyEvents.replyToken;
+      console.log("Yay joinin");
+      reply(replyToken,responseMessage);
+    }
+  }
+
+
 
   // req.body will be webhook event object
   res.json(bodyEvents);

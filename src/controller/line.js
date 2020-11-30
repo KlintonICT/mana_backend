@@ -1,6 +1,6 @@
 import axios from "axios";
 import { responseMessage } from "../data/responseMessage";
-//import { greetingMessage } from "../data/greetingMessage";
+import { greetingMessage } from "../data/greetingMessage";
 
 const lineCallback = async (req, res) => {
   const bodyEvents = req.body.events[0];
@@ -21,11 +21,9 @@ const lineCallback = async (req, res) => {
     if(bodyEvents.type == "join"){
       const replyToken = bodyEvents.replyToken;
       console.log("Yay joinin");
-      reply(replyToken,responseMessage);
+      reply(replyToken,greetingMessage);
     }
   }
-
-
 
   // req.body will be webhook event object
   res.json(bodyEvents);

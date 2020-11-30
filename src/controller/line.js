@@ -14,7 +14,7 @@ const lineCallback = async (req, res) => {
     const text = bodyEvents.message.text
     console.log("Text Received : ", text);
     console.log("Chat ID       : ", bodyEvents.message.id);
-    if (text === "ส่งบิล") reply(replyToken);
+    if (text === "ส่งบิล") reply(replyToken,responseMessage);
   }
 
   if(bodyEvents.type != null){

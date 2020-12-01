@@ -12,7 +12,7 @@ export const greetingMessage = [
       hero: {
         type: "image",
         url:
-          "https://manastrgacc.blob.core.windows.net/receipt-image/2811552165845925-photo_2020-11-30%2017.00.03.jpeg",
+          "https://manastrgacc.blob.core.windows.net/static-image/7647505979466294-photo_2020-12-01%2013.20.04.jpeg",
         size: "full",
         aspectRatio: "1:1",
         aspectMode: "cover",

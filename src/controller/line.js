@@ -45,7 +45,7 @@ const reply = (replyToken, messages) => {
     .post(`${process.env.LINE_HOST}/bot/message/reply`, data, {
       headers: headers,
     })
-    .then((response) =>
+    .then((response) => {
       console.log("Bot reply data: ", response.data);
       console.log("Bot reply code: ", response.statusCode);
     })

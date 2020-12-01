@@ -40,17 +40,18 @@ const reply = (replyToken, messages) => {
     replyToken: replyToken,
     messages: messages,
   };
-
+  console.log("Before data :" + data)
   axios
     .post(`${process.env.LINE_HOST}/bot/message/reply`, data, {
       headers: headers,
     })
-    .then((response) => {
+    .then((response) =>
       console.log("Bot reply data: ", response.data);
       console.log("Bot reply code: ", response.statusCode);
     })
     .catch((error) => {
-      console.log("Bot reply error: ", error.data);
+      console.log("Data :"+ data);
+      console.log("Bot reply error: ", error);
     });
 };
 

@@ -14,32 +14,27 @@ const send = async (req, res) => {
     if (typeof validated === "object")
       return res.status(500).json({ message: validated });
 
-    const verifyUser = new Request(
-      userExists(body),
-      (error, rowCount) => {
-        if (error) res.status(500).json({ message: error });
-        else {
-          if (rowCount === 1) {
-            const request = new Request(sendBillQuery(body), (err, row) => {
-              if (err)
-                return res
-                  .status(404)
-                  .json({ message: "Store Bill failed.", error: err });
-              else {
-                Line.lineNotification(body);
-                res.status(200).json({ message: "Bill is stored" });
-              }
-            });
+    const verifyUser = new Request(userExists(body), (error, rowCount) => {
+      if (error) res.status(500).json({ message: error });
+      else {
+        if (rowCount === 1) {
+          const request = new Request(sendBillQuery(body), (err, row) => {
+            if (err)
+              return res
+                .status(404)
+                .json({ message: "Store Bill failed.", error: err });
+            else {
+              Line.lineNotification(body);
+              res.status(200).json({ message: "Bill is stored" });
+            }
+          });
 
-            queryDatabase(request);
-          } else {
-            res
-              .status(404)
-              .json({ message: "User is not in the organization" });
-          }
+          queryDatabase(request);
+        } else {
+          res.status(404).json({ message: "User is not in the organization" });
         }
       }
-    );
+    });
 
     queryDatabase(verifyUser);
   } catch (error) {

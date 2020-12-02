@@ -3,6 +3,8 @@ import { sendBillQuery, userExists } from "../../sqlQuery";
 import { queryDatabase } from "../../database";
 import billValidations from "../../validations/bill";
 
+import Line from "../line";
+
 const send = async (req, res) => {
   try {
     const { body } = req;
@@ -23,7 +25,10 @@ const send = async (req, res) => {
                 return res
                   .status(404)
                   .json({ message: "Store Bill failed.", error: err });
-              else res.status(200).json({ message: "Bill is stored" });
+              else {
+                Line.lineNotification(body.posSum);
+                res.status(200).json({ message: "Bill is stored" });
+              }
             });
 
             queryDatabase(request);

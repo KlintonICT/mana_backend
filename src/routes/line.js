@@ -6,6 +6,6 @@ import { config } from '../config/line';
 
 const router = express.Router();
 
-router.post("/callback", middleware(config), Line.lineCallback);
+router.post("/callback", middleware(config), Line.lineCallBack);
 
 export default router;

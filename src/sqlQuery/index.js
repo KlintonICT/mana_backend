@@ -1,8 +1,7 @@
-const moment = require("moment-timezone");
+import { thaiDate } from "../utils/thaiDate";
 
 // send bill query
 export const sendBillQuery = (data) => {
-  const thaiDate = moment.tz(new Date(), "Asia/Bangkok");
   const today = thaiDate.format("YYYY-MM-DD HH:mm:ss.SSS");
   const { transferSum, cashSum, posSum, receiptImg, userId } = data;
 

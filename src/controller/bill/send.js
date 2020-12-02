@@ -26,7 +26,7 @@ const send = async (req, res) => {
                   .status(404)
                   .json({ message: "Store Bill failed.", error: err });
               else {
-                Line.lineNotification(body.posSum);
+                Line.lineNotification(body);
                 res.status(200).json({ message: "Bill is stored" });
               }
             });

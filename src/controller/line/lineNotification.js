@@ -8,7 +8,7 @@ const lineNotification = (sum) => {
         Authorization: `Bearer ${process.env.AUTHORIZATION}`,
       };
     const data = {
-        groupId : groupId,
+        to : groupId,
         messages: [
             {
                 type : "text",

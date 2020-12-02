@@ -1,3 +1,3 @@
 const moment = require("moment-timezone");
 
-export const thaiDate = () => moment.tz(new Date(), "Asia/Bangkok");
+export const thaiDate = moment.tz(new Date(), "Asia/Bangkok");

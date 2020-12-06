@@ -13,13 +13,13 @@ export const sendBillQuery = (data) => {
 
 // get bill query
 export const getBillQuery = () => {
-  return "SELECT transacSumHistory.transacSumId, transacSumHistory.transferSum, transacSumHistory.cashSum, transacSumHistory.posSum, transacSumHistory.receiptImg, transacSumHistory.datetime, userDb.branch, userDb.firstName, userDb.lastName FROM transacSumHistory INNER JOIN userDb on transacSumHistory.userId = userDb.userId";
+  return "SELECT transacSumHistory.transacSumId, transacSumHistory.transferSum, transacSumHistory.cashSum, transacSumHistory.posSum, transacSumHistory.receiptImg, transacSumHistory.datetime, userDb.branch, userDb.firstName, userDb.lastName FROM transacSumHistory INNER JOIN userDb on transacSumHistory.userId = userDb.userId ORDER BY datetime DESC";
 };
 
 // get bill by branch query
 export const getByBranchQuery = (branch) => {
   return `SELECT transacSumHistory.transacSumId, transacSumHistory.transferSum, transacSumHistory.cashSum, transacSumHistory.posSum, transacSumHistory.receiptImg, transacSumHistory.datetime, userDb.branch, userDb.firstName, userDb.lastName FROM transacSumHistory
-  INNER JOIN userDb on transacSumHistory.userId = userDb.userId WHERE userDb.branch = '${branch}'`;
+  INNER JOIN userDb on transacSumHistory.userId = userDb.userId WHERE userDb.branch = '${branch}' ORDER BY datetime DESC`;
 };
 
 // update bill query

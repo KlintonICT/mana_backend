@@ -25,7 +25,7 @@ const get = async (req, res) => {
     });
 
     // response when filtering data is finished
-    request.on("doneInProc", function (rowCount, more, rows) {
+    request.on("doneInProc", (rowCount, more, rows) => {
       res.status(200).json({ data });
     });
 

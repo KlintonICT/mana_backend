@@ -6,6 +6,11 @@ import Bill from "../controller/bill";
 const router = express.Router();
 
 router.get("/", passport.authenticate("jwt", { session: false }), Bill.get);
+router.get(
+  "/total",
+  passport.authenticate("jwt", { session: false }),
+  Bill.getTotalDiff
+);
 router.post("/", Bill.send);
 router.put("/", passport.authenticate("jwt", { session: false }), Bill.update);
 

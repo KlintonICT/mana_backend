@@ -50,3 +50,8 @@ export const adminLoginQuery = (data) => {
   const { username } = data;
   return `SELECT password FROM userDb WHERE userId = '${username}'`;
 };
+
+// get total and diff
+export const getTotalDiffQuery = () => {
+  return "SELECT [transferSum] + [cashSum] as total, [posSum], [posSum] - [transferSum] + [cashSum] as diff, datetime FROM [dbo].[transacSumHistory] ORDER BY datetime DESC";
+};

@@ -44,6 +44,12 @@ const filterResult = (columns) => {
       case "diff":
         filteredData.diff = value;
         break;
+      case "transferSum":
+        filteredData.transferSum = value;
+        break;
+      case "cashSum":
+        filteredData.cashSum = value;
+        break;
       default:
         filteredData.datetime = value;
     }

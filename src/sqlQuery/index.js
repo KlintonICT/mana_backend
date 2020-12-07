@@ -53,5 +53,5 @@ export const adminLoginQuery = (data) => {
 
 // get total and diff
 export const getTotalDiffQuery = () => {
-  return "SELECT [transferSum] + [cashSum] as total, [posSum], [posSum] - [transferSum] + [cashSum] as diff, datetime FROM [dbo].[transacSumHistory] ORDER BY datetime DESC";
+  return "SELECT [transferSum] + [cashSum] as total, [posSum], [transferSum], [cashSum], [posSum] - [transferSum] + [cashSum] as diff, datetime FROM [dbo].[transacSumHistory] ORDER BY datetime DESC";
 };

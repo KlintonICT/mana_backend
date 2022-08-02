@@ -10,7 +10,7 @@
     "dev": "nodemon -r dotenv/config --exec babel-node ./src/app.js"
   },
   "dependencies": {
-    "@azure/storage-blob": "^12.3.0",
+    "@azure/storage-blob": "^12.11.0",
     "@babel/runtime": "^7.12.5",
     "@line/bot-sdk": "^7.3.0",
     "axios": "^0.21.0",
